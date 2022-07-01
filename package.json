@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc --report=html --reporter=text --reporter=lcov mocha -r @babel/register",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Oluwatimilehin Idowu",
   "license": "ISC",
@@ -21,6 +22,19 @@
     "pino": "^7.6.4"
   },
   "devDependencies": {
-    "pino-pretty": "^7.5.1"
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/node": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/register": "^7.18.6",
+    "@babel/runtime": "^7.18.6",
+    "chai": "^4.3.6",
+    "coveralls": "^3.1.1",
+    "mocha": "^10.0.0",
+    "nyc": "^15.1.0",
+    "pino-pretty": "^7.5.1",
+    "sinon-chai": "^3.7.0",
+    "supertest": "^6.2.3"
   }
 }
